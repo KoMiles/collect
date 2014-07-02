@@ -13,7 +13,7 @@
 */
 
 
-$re = file('1.txt');
+$re = file('cat.txt');
 foreach($re as $key =>$value)
 {
 	$value = preg_replace('/[\s+]/','',$value);
@@ -27,5 +27,5 @@ foreach($re as $key=>$value){
 ob_start();
 print_r($newArr);
 $result = ob_get_contents();
-file_put_contents('2.txt',$result);
+file_put_contents('newCat.txt',$result);
 ?>

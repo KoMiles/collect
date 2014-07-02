@@ -2,14 +2,14 @@
 /*
 **effect:生成一级、二级、三级url链接
 **date:2014-07-02 9:40 by komiles
-**
-**
-**
-**
-**
-**
-**
-**
+**knowledge point
+**1,file读取文件
+**2，iconvz转化编码
+**3，preg_replace 字符串替换
+**4，strlen计算字符串的长度
+**5，strsub 字符串截取
+**6，ob_start,ob_get_contents 得到缓存区的内容
+**7，file_put_contents 把得到的内容放到文件中
 **
 */
 $catArr = file('cat.txt');
