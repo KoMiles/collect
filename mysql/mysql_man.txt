@@ -1,0 +1,13 @@
+mysql 学习笔记
+//链接mysql数据库
+mysql -h [主机名] -u [用户名] -p[密码] -D[数据库名字]（可选）
+例如：mysql -h 127.0.0.1 -u root -proot 
+
+//查看所有的数据库
+show databases;
+
+//选择数据卡
+use test
+
+//查看所有的表
+show tables;
