@@ -1,0 +1,31 @@
+linux命令
+find命令
+1,查看当前文件夹以及子文件夹有没有index.php这个文件
+find . -name test.php
+find . -type f -name test.php
+2,在某一个文件夹下查找是否存在另一个文件
+find . -type d -name haomeiv
+.表示当前文件夹，-type表示类型【f（文件）,d（文件夹类型即目录）,l(链接)】 -name 
+3,在当前目录下，查找某一类文件，如查找.txt
+find ./ -name '*.txt'
+4,查找当前文件夹中，那些文件和目录属于komiles用户
+find ./ -user komiles
+5,查找当前文件夹中大于1M的文件
+find ./ -size +1000k
+6,查找以test.php结尾的文件
+find ./ -name '*test.php'
+7,查找以test开头的文件或者以tag开头的文件
+find ./ -name 'test*' -o -name 'tag*'
+8,查找当前文件夹中，最近两天修改过的文件
+find ./ -mtime -2
+9,读取一天内访问过的文件
+find ./ -atime -1
+10,在当前文件夹下查找含有test字符的php文件
+find  ./ -type f -name '*.php'|xargs grep 'hello'
+
+
+
+其他知识
+查看当前系统有多少用户
+cat /etc/passwd |cut -f 1 -d:
+
