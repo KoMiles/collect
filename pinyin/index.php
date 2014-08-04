@@ -1,6 +1,6 @@
 <?php
 include('pinyin.inc.php');
-$name = '申禧';
+$name = '少年强，中国强';
 $str = pinyin($name);
 var_dump($str);
 ?>
