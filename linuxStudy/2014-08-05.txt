@@ -1,0 +1,12 @@
+service命令的用法
+1，并不是所有的linux发行版都用，主要在redhat,fedora,mandriva和centos中
+2，此命令在/sbin目录下，用file命令查看此命令会发现他是一个脚本命令
+3,此命令的作用是去/etc/init.d/下找对应的服务，进行开启和关闭的。
+4，开启httpd服务
+service httpd start
+restart表示重启
+stop表示关闭
+reload表示重新载入配置
+5,关闭mysql服务
+service mysqld stop
+6,强烈建议大家将service命令替换为/etc/init.d/mysqld stop
