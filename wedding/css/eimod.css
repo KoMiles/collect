@@ -1,0 +1,311 @@
+/* css reset */
+*html{background-attachment:fixed;overflow-x:hidden} 
+body{margin:0;padding:0;font:12px Arial;overflow-x:hidden;behavior:url(/s/hover.htc);-webkit-text-size-adjust:none;_position:relative;}
+div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,hr,pre,form,fieldset,input,textarea,blockquote,p{padding:0;margin:0}
+hr{margin:0 auto}
+table,td,tr,th{font-size:12px}
+li{list-style-type:none}
+img{border:0;cursor:pointer}
+ol,ul{list-style:none}
+h1,h2,h3,h4,h5,h6{font-size:12px;font-weight:normal}
+address,cite,code,em,th{font-weight:normal;font-style:normal}
+a{text-decoration:none;outline:none;cursor:pointer}
+
+.pages{width:100%;line-height:26px;font-size:12px;text-align:center}
+.pages a{display:inline-block;margin-right:5px;padding:0 8px 0 8px;color:#676D6B;background:#D8D8D8;border-radius:5px;}
+.pages b.current{display:inline-block;margin-right:5px;padding:0 8px 0 8px;color:#fff;background:#CD1046;border-radius:5px;}
+.pages a:hover{background:#F0700B;color:#fff;border-radius:5px;}
+/* ±à¼­ */
+#tree_edit{min-height:0;overflow:hidden;width:226px;display:none}
+#tree_edit .cont_right{min-height:0;overflow:hidden;width:226px;background:#fff;position:absolute;left:50%;top:50px;margin-left:-560px;background:#fff;}
+#tree_edit #save{font:100 14px/28px "Î¢ÈíÑÅºÚ";background:#369;cursor:pointer;color:#fff;padding:3px 5px;}
+#groomname, #bridename{width:40px;}
+.sidebar .writeinfo .tab {padding-left: 6px;margin-bottom: 10px;position: relative;border-bottom: solid 1px #ccc}
+.sidebar .writeinfo .tab li {float: left;margin: 0 10px 0 0}
+.sidebar .writeinfo .tab li a {color: #333;height: 16px;outline: none;display: block;background: #ccc;padding: 3px 3px;line-height: 16px;border: solid #ccc;text-decoration: none;border-width: 1px 1px 0 1px}
+.sidebar .writeinfo .tab li.cur a {bottom: -1px;background: #fff;position: relative}
+.sidebar .writeinfo h3 {color: #fff;height: 33px;line-height: 33px;padding-left: 12px;background: url('../images/editor-title.jpg') no-repeat;border:1px solid #fff;width:212px;}
+.sidebar .writeinfo h3 span{float:right;font:100 18px/33px 'arial';padding-right:15px;cursor:pointer;}
+.sidebar .writeinfo .content {font-size: 12px;position: relative;padding: 10px;border: solid 1px #ddd}
+.sidebar .writeinfo .content p{padding: 5px 0}
+.sidebar .writeinfo .content p label {font-size: 12px;vertical-align: middle}
+.sidebar .writeinfo .content p .name {width: 55px}
+.sidebar .writeinfo .content p * {font-size: 12px}
+.sidebar .writeinfo .content p .time {width: 58px}
+.sidebar .writeinfo .content p .memo {width: 146px;height: 60px;font-size: 12px;overflow: hidden}
+.sidebar .writeinfo .content p .i_music {width: 98px!important}
+.sidebar .writeinfo .content p .i_help {width: 17px;height: 17px;border: 0;cursor: pointer;margin-left: 5px;text-indent: -99em;display: inline-block;vertical-align: middle;background: url(images/help.gif) no-repeat}
+.sidebar .writeinfo .content p em {margin: 0;height: 22px;overflow: hidden;display: inline-block;vertical-align: middle}
+.sidebar .writeinfo .content p button {margin-right: 5px}
+.sidebar .writeinfo .content p .i_text{width:140px;}
+#creation{display:block;color: white;width: 80px;height: 30px;cursor: pointer;font:100 14px/29px "Î¢ÈíÑÅºÚ";background:#9a0000;border-radius:5px;text-align:center;}
+.i_text {margin: 1px;width: 200px;height: 18px;font-size: 14px;padding: 3px 5px;background: white;line-height: 18px;border: solid 1px #CCC;box-shadow: inset 1px 1px 2px #E4E4E4;}
+#move_mark{width:390px;height:217px;display:none;background:url('../images/mark_bg.png') no-repeat top;position:fixed;left:65px; bottom:0px;z-index:999;_position:absolute;_top:expression(eval(document.documentElement.scrollTop+document.documentElement.clientHeight-this.offsetHeight-(parseInt(this.currentStyle.marginTop,10)||0)-(parseInt(this.currentStyle.marginBottom,10)||0)))}
+#move_mark h3{text-align:right;cursor:pointer;padding:78px 26px 0 0;color:red;}
+
+.manage {position:absolute;top:60px;left:50%;margin-left:-400px;z-index:9999;}
+#draghandel {position:absolute;width:752px;height:707px;top:0;overflow:hidden;z-index:2000;cursor:move;background-color:red;filter:alpha(opacity=20);-moz-opacity:0.2;opacity:0.2;display:none}
+#man,#man_move {width:80px;text-align:center;padding:5px;margin-right:10px;background-color:#000;color:#fff;font-size:12px;cursor:pointer;z-index:9999;float:left;border-radius: 15px;}
+
+#upload {display:none;border:2px solid #090;background-color:#fff;clear:both}
+
+/*bg_ini*/
+
+#tjdd_min{width:20px;height:100px;overflow:hidden;float:left;padding:0 10px 0 10px;position:fixed !important;top:80px;left:0;background:#090;border-radius:0 15px 15px 0;cursor:pointer;position:absolute;_top:expression(offsetParent.scrollTop+80);z-index:9999}
+#tjdd_min a{width:100%;height:80px;float:left;padding:10px 0;font:bolder 16px/20px 'Î¢ÈíÑÅºÚ',Arial;color:#fff}
+
+/*mask_cursor*/
+.mask_cursor{display:none;width:100%;height:100%;position:absolute;top:0;left:0;z-index:-1}
+/*ei_top_Area*/
+
+input.top_bar_btn{display:inline-block;width:53px;height:20px;overflow:hidden;background:url('../images/top_bar_button_bg.gif') no-repeat;border:0;cursor:pointer}
+input#top_bar_open{position:absolute;top:0;left:50%;margin-left:427px;background-position:bottom;z-index:99999}
+#ei_top_Area{width:990px;height:32px;overflow:hidden;position:absolute;padding-top:14px;background:url('../images/top_bar_bg.png');top:0;left:50%;margin-left:-495px;z-index:9999;color:#fff;border-radius:0 0 10px 10px}
+#ei_top_Area #wed_info{float:left;padding-left:25px;line-height:18px}
+#ei_top_Area #wed_info strong{color:#ff9f0a;margin-right:5px}
+#ei_top_Area #wed_info span{margin-left:25px}
+#ei_top_Area #baidu_share_area{width:144px;height:27px;line-height:27px;float:left;margin-top:-5px;padding-left:20px}
+#ei_top_Area #baidu_share_area #bdshare{float:right}
+#ei_top_Area #login_sta{height:20px;float:right;overflow:hidden;padding-right:10px;line-height:20px}
+#ei_top_Area #login_sta b{margin:0 8px 0 8px}
+#ei_top_Area #login_sta a{margin:0 8px 0 8px;color:#FF9E0E}
+
+#ei_top_Area a.ini_item_A{float:left;cursor:pointer;font-weight:bolder;color:#f90;margin:0 15px 0 15px;line-height:18px}
+
+#menus .menu_flash{display:none;width:100%;height:100%;overflow:hidden}
+/*set_photo_style */
+#set_photo_style{position:absolute;top:10px;left:10px}
+#set_photo_style tr td select{padding:4px 0 4px 0}
+#set_photo_style tr td input{cursor:pointer;width:80px;height:30px;float:left;font:bold 12px Arial;background:#80bf0c;color:#fff;border:3px solid #fff;border-radius:5px}
+/* body Ä£°å */
+
+.wall table{width:100%;}
+.wall table tr td{border:1px solid #ddd}
+.wall table tr td input#iprayforu{width:150px;height:50px;overflow:hidden;font:bolder 30px/40px Arial;color:#090;margin:10px auto;cursor:pointer}
+.wall table tr td a.zf{display:block;width:150px;height:50px;overflow:hidden;font:bolder 30px/50px Arial;color:#090;margin:10px auto;border:1px solid #000;background:#eee;}
+.wall table tr td #note_reader{width:250px;height:250px;}
+.wall table tr td #note_reader h3{font:bolder 16px/30px Arial;color:#090;text-align:center}
+.wall table tr td #note_reader ul{width:240px;height:186px;overflow:hidden;margin:0 auto;position:relative}
+.wall table tr td #note_reader ul li{position:absolute;top:0;left:0}
+.wall table tr td #note_reader p.page{text-align:center;padding-top:15px;}
+.wall table tr td #note_reader p.page a,.wall table tr td #note_reader p.page span{width:50px;height:24px;display:inline-block;margin:0 3px;cursor:pointer;line-height:24px;border:1px solid #090}
+.wall table tr td #note_reader p.page a.gray,.wall table tr td #note_reader p.page span.gray{cursor:text;border-color:gray;color:#ddd}
+
+.wall ul#area{width:100%;overflow:hidden;margin:0 auto;height:600px;position:relative}/*;min-height:0;*/
+.wall ul li{width:237px;height:183px;overflow:hidden;float:left; -moz-user-select:none; filter: alpha(opacity=100); /*ie*/  opacity: 1; /*firefox*/box-shadow:5px 5px 3px rgba(50,50,50,.3);}
+.wall ul li .mod_item_title{width:220px;height:20px;margin:0 auto;overflow:hidden;line-height:20px;margin-top:10px;cursor:move}
+.wall ul li .mod_item_title b{float:left}
+.wall ul li .mod_item_title .mod_item_close{float:right;padding:2px;cursor:pointer}
+.wall ul li .mod_item_body{width:220px;height:100px;overflow:hidden;margin:0 auto;line-height:20px}
+.wall ul li .mod_item_body .face_area{width:56px;height:56px;overflow:hidden;text-align:center;float:left;margin-right:5px}
+.wall ul li .mod_item_body .face_area img{height:56px;overflow:hidden}
+.wall ul li .mod_item_body .face_area p{word-break:break-all}
+.wall ul li .mod_item_bottom{width:220px;height:50px;overflow:hidden;margin:0 auto;text-align:right}
+.wall ul li .mod_item_bottom h4{width:100%;height:34px;text-align:left;line-height:31px}
+
+/* mod_001 */
+.mod_001{background:url('../images/body_bg.jpg') no-repeat top #FFF6CF}
+.mod_001 #index{width:100%;height:640px;overflow:hidden;margin:0 auto}
+.mod_001 .flash{position:absolute;left:50%;margin-left:-750px;width:1500px;overflow:hidden;height:800px;top: 0}
+.mod_001 .layout{position:absolute;width:682px;left:50%;margin-left:-342px;top:100px;overflow:hidden;height:524px;}
+.mod_001 .cover_clc{background:url('../images/mask.png') no-repeat}
+.mod_001 #menus{width:734px;height:73px;background:url('../images/nav_bg.gif') no-repeat top;position: relative;margin:30px auto}
+.mod_001 #menus table{width:100%;height:100%;}
+.mod_001 #menus table th{height:100%;}
+.mod_001 #menus table th a{display:block;height:100%;width:100%;cursor:pointer;}
+.mod_001 #main_mask, .mod_001 .main_mask{ position:absolute;z-index:99999;background-color:#fff6cf;color:#F0555D;font-size:16px;text-align:center;top:0;left:0;padding:0;}
+.mod_001 #invite { width:720px;height:500px;margin:100px auto 0;}
+.mod_001 #invite #qjqj {position:relative;width:750px;height:500px;overflow:hidden;}
+.mod_001 #invite #qjqj .img_filter{min-height:0;overflow:hidden;position:absolute;}
+.mod_001 #map_area{width:750px;height:465px;overflow:hidden;margin:0 auto;position:relative;margin-top:100px;background:#ddd;padding:10px}
+.mod_001 #map_area #main_area{width:100%;height:100%;overflow:hidden;float:left}
+.mod_001 #photo{width:1000px;margin:0 auto;min-height:0;overflow:hidden;margin-top:40px}
+.mod_001 #wall{width:1146px;height:608px;margin:0 auto;}
+.mod_001 .wall ul#area{height:575px}
+.mod_001 .wall ul li{position:absolute;top:260px;left:596px;}
+.mod_001 .wall table{height:520px;}
+/* mod_002 */
+.mod_002{background:rgb(168,0,0) url('../images/mainbg.jpg') no-repeat top}
+.mod_002 #index{width:100%;height:600px;overflow:hidden;margin:0 auto}
+.mod_002 .flash{position:absolute;top:0;left:50%;width:1450px;height:768px;margin-left:-725px;overflow:hidden;}
+.mod_002 .layout{ position:absolute;width:718px;height:707px;left:50%;margin-left:-359px;top:40px;overflow:hidden}
+.mod_002 .cover_clc{background:url('../images/mask.png') no-repeat}
+.mod_002 #menus{width:810px;height:140px;overflow:hidden;margin:0 auto;position:relative;background:url('../images/nav_bg.png') no-repeat center center}
+.mod_002 #menus table{width:100%;height:100%;}
+.mod_002 #menus table th{height:100%;}
+.mod_002 #menus table th a{display:block;height:120px;width:140px}
+.mod_002 #main_mask,.mod_002 .main_mask{ position:absolute;z-index:99999;background-color:rgb(168,0,0);color:white;font-size:14px;top:0;left:0;padding:0;text-align:center;}
+.mod_002 #invite { width:750px;height:465px;margin:0 auto;margin-top:100px}
+.mod_002 #invite #qjqj {position:relative;height:465px;overflow:hidden;width:750px;}
+.mod_002 #invite #qjqj .img_filter{position:absolute;}
+.mod_002 #map_area{width:750px;height:465px;overflow:hidden;margin:0 auto;position:relative;margin-top:100px;background:#ddd;padding:10px}
+.mod_002 #map_area #main_area{width:100%;height:100%;overflow:hidden;float:left}
+.mod_002 #photo{width:1000px;margin:0 auto;min-height:0;overflow:hidden;margin-top:40px}
+.mod_002 #wall{width:1146px;height:608px;margin:0 auto;}
+.mod_002 .wall ul#area{height:575px}
+.mod_002 .wall ul li{position:absolute;top:260px;left:596px;}
+.mod_002 .wall table{height:520px;}
+/* mod_003 */
+.mod_003{background:url('../images/body_bg.jpg') repeat-x top center #F4C26D;height: 100%;}
+.mod_003_z_main{background:url('../images/index_bg.jpg') repeat-x top center #F4C26D}
+.mod_003 #ei_top_Area {background: url('../images/top_bar_bg.png') no-repeat;}
+.mod_003 #index{height:700px;overflow:hidden;margin:0 auto}
+.mod_003 .flash{position:absolute;left:50%;margin-left:-750px;width:1500px;overflow:hidden;height: 700px;top: 0}
+.mod_003 .layout{position:absolute;width:680px;left:50%;margin-left:-330px;top:87px;overflow:hidden;height:479px}
+.mod_003 .cover_clc{background:url('../images/mask.png') no-repeat}
+.mod_003 #menus{width:734px;height:73px;background:url('../images/nav_bg.gif') no-repeat top;position: relative;margin:30px auto}
+.mod_003 #menus table{width:100%;height:100%;}
+.mod_003 #menus table th{height:100%;}
+.mod_003 #menus table th a{display:block;height:100%;width:100%;cursor:pointer;}
+.mod_003 #main_mask, .mod_003 .main_mask{ position:absolute;z-index:99999;background-color:#29BBF6;color:#F0555D;font-size:16px;text-align:center;top:0;left:0;padding:0;}
+
+.mod_003 #invite { width:922px;height:540px;overflow:hidden;margin:0 auto;background:url('../images/ivi_bg.png') no-repeat;margin-top:60px;}
+.mod_003 #invite #qjqj {position:relative;width:480px;height:440px;overflow:hidden;margin:60px 0 0 375px;}
+
+.mod_003 #invite #qjqj .img_filter{position:absolute;}
+.mod_003 #map_area{width:750px;height:465px;overflow:hidden;margin:0 auto;position:relative;margin-top:100px;background:#ddd;padding:10px}
+.mod_003 #map_area #main_area{width:100%;height:100%;overflow:hidden;float:left}
+.mod_003 #photo{width:1000px;margin:40px auto 0;min-height:0;overflow:hidden;}
+.mod_003 #wall{width:1146px;height:608px;margin:0 auto;}
+.mod_003 .wall ul#area{height:575px}
+.mod_003 .wall ul li{position:absolute;top:260px;left:596px;}
+.mod_003 .wall table{height:520px;}
+/*mod_004*/
+.mod_004{background:url('../images/mainbg.jpg') repeat-x center -40px #000000;}
+.mod_004 #ei_top_Area{background:url('../images/top_bar_bg.png');}
+.mod_004 #index{width:100%;height:600px;overflow:hidden;margin:0 auto}
+.mod_004 .flash{position:absolute;top:0;left:50%;width:1360px;height:700px;margin-left:-680px;overflow:hidden;}
+.mod_004 .layout,.mod_004 .manage{display:none}
+.mod_004 #menus{width:748px;height:42px;overflow:hidden;position:relative;background:url('../images/nav_bg.png') no-repeat center center;margin:30px auto}
+.mod_004 #menus table{width:100%;height:40px;padding:0}
+.mod_004 #menus table th{height:100%;padding-left:3px;border:0;height:40px;}
+.mod_004 #menus table th a{display:block;height:42px;width:138px}
+.mod_004 #main_mask,.mod_002 .main_mask{ position:absolute;z-index:99999;background-color:#1d0304;color:white;font-size:14px;top:0;left:0;padding:0;text-align:center;}
+.mod_004 #invite { width:833px;height:614px;margin:0 auto;margin-top:100px;background:url('../images/qj.jpg') no-repeat top center;padding-left:163px;padding-top:14px}
+.mod_004 #invite #qjqj {position:relative;height:485px;overflow:hidden;width:652px;}
+.mod_004 #invite #qjqj .img_filter{position:absolute;}
+.mod_004 #map_area{width:750px;height:465px;overflow:hidden;margin:0 auto;position:relative;margin-top:100px;background:#ddd;padding:10px}
+.mod_004 #map_area #main_area{width:100%;height:100%;overflow:hidden;float:left}
+.mod_004 #photo{width:1000px;margin:0 auto;min-height:0;overflow:hidden;margin-top:40px}
+.mod_004 #wall{width:1146px;height:608px;margin:0 auto;}
+.mod_004 .wall ul#area{height:575px}
+.mod_004 .wall ul li{position:absolute;top:260px;left:596px;}
+.mod_004 .wall table{height:520px;}
+/*mod_005*/
+.mod_005{background:url('/img/eimod/mod_005/qj.jpg') no-repeat top center #38122b;}
+
+/*.mod_005_z_main{background:url('/img/eimod/mod_005/mainbg.jpg') no-repeat top center #38122b}*/
+.mod_005 #ei_top_Area{background:url('/img/eimod/mod_005/top_bar_bg.png')}
+.mod_005 #index{width:100%;height:630px;overflow:hidden;margin:0 auto}
+.mod_005 .flash{position:absolute;left:50%;margin-left:-750px;width:1500px;overflow:hidden;height: 744px;top: 0;}
+/*.mod_005 .cover_clc{background:url('/img/eimod/mod_005/mask.png') no-repeat center;}*/
+.mod_005 .manage #man,.mod_005 .manage #man_move{border:1px solid #F4C26D}
+.mod_005 #menus{width:722px;height:50px;background:url('/img/eimod/mod_005/nav_bg.png') no-repeat top;position:relative;margin:30px auto}
+.mod_005 #menus table{width:100%;height:100%;}
+.mod_005 #menus table th{height:100%;}
+.mod_005 #menus table th a{display:block;height:50px;width:131px;cursor:pointer;}
+.mod_005 #main_mask, .mod_005 .main_mask{ position:absolute;z-index:99999;background-color:#570f37;color:#F0555D;font-size:16px;text-align:center;top:0;left:0;padding:0;}
+.mod_005 #invite{width:708px;height:515px;overflow:hidden;margin:0 auto;margin-top:100px;background:url('/img/eimod/mod_005/inv_bg.png') no-repeat top}
+.mod_005 #invite #qjqj {overflow:hidden;width:602px;height:420px;position:relative;margin:49px 0 0 52px}
+.mod_005 #invite #qjqj .img_filter{min-height:0;overflow:hidden;position:absolute;}
+.mod_005 #map_area{width:750px;height:465px;overflow:hidden;margin:0 auto;position:relative;margin-top:100px;background:#ddd;padding:10px}
+.mod_005 #map_area #main_area{width:100%;height:100%;overflow:hidden;float:left}
+.mod_005 #photo{width:1000px;margin:0 auto;min-height:0;overflow:hidden;margin-top:40px}
+.mod_005 #wall{width:1146px;height:608px;overflow:hidden;margin:0 auto;}
+.mod_005 .wall ul#area{height:575px}
+.mod_005 .wall ul li{position:absolute;top:260px;left:596px;}
+.mod_005 .wall table{height:520px;}
+/* mod_006 */
+.mod_006{background:url('/img/eimod/mod_006/mainbg.jpg') no-repeat top #fe3c9c}
+.mod_006_z_main table#set_photo_style{display:none}
+.mod_006 #index{width:100%;height:600px;overflow:hidden;margin:0 auto}
+.mod_006 .flash{position:absolute;top:0;left:50%;width:1360px;height:730px;margin-left:-680px;overflow:hidden;}
+.mod_006 .layout,.mod_006 .manage{display:none}
+.mod_006 #menus{width:748px;height:42px;overflow:hidden;position:relative;background:url('../images/nav_bg.png') no-repeat center center;margin:30px auto}
+.mod_006 #menus table{width:100%;height:40px;padding:0}
+.mod_006 #menus table th{height:100%;padding-left:3px;border:0;height:40px;}
+.mod_006 #menus table th a{display:block;height:42px;width:138px}
+.mod_006 #main_mask,.mod_006 .main_mask{ position:absolute;z-index:99999;background-color:#fe3c9c;color:white;font-size:14px;top:0;left:0;padding:0;text-align:center;}
+.mod_006 #invite { width:703px;height:447px;overflow:hidden;margin:0 auto;padding: 40px 0 0 89px;margin-top:100px;background:url('/img/eimod/mod_006/qj.png') no-repeat;}
+.mod_006 #invite #qjqj {position:relative;width:568px;height:437px;overflow:hidden;margin-left: 135px;}
+.mod_006 #invite #qjqj .img_filter{position:absolute;}
+.mod_006 #map_area{width:750px;height:465px;overflow:hidden;margin:0 auto;position:relative;margin-top:100px;background:#ddd;padding:10px}
+.mod_006 #map_area #main_area{width:100%;height:100%;overflow:hidden;float:left}
+.mod_006 #photo{width:1000px;margin:0 auto;min-height:0;overflow:hidden;margin-top:40px}
+.mod_006 #wall{width:1146px;height:608px;overflow:hidden;margin:0 auto;}
+.mod_006 .wall ul#area{height:575px}
+.mod_006 .wall ul li{position:absolute;top:260px;left:596px;}
+.mod_006 .wall table{height:520px;}
+/*mod_007*/
+.mod_007{background:url('../images/mainbg.jpg') no-repeat top #a1002e}
+.mod_007 .mask_cursor{display:block;_display:none}
+.mod_007 #ei_top_Area {background: url('../images/top_bar_bg.png') no-repeat;}
+.mod_007_z_main .mask_cursor{display:none}
+.mod_007_z_invite{background:url('../images/invite_bg.jpg') no-repeat top center #a1002e}
+.mod_007_z_main #set_photo_style{display:none}
+.mod_007 #index{width:100%;height:600px;overflow:hidden;margin:0 auto}
+.mod_007 .flash{position:absolute;top:0;left:50%;width:1450px;height:800px;margin-left:-725px;overflow:hidden;}
+.mod_007 .layout,.mod_007 .manage{display:none}
+.mod_007 #menus{width:140px;height:450px;overflow:hidden;position:absolute;top:150px;right:20px}
+.mod_007 #menus table{width:100%;height:40px;padding:0;display:none}
+.mod_007 #menus .menu_flash{display:block}
+.mod_007 #main_mask,.mod_007 .main_mask{ position:absolute;z-index:99999;background-color:#a1002e;color:white;font-size:14px;top:0;left:0;padding:0;text-align:center;}
+.mod_007 #invite { width:703px;height:447px;overflow:hidden;margin:0 auto;padding:70px 0 0 89px;margin-top:100px}
+.mod_007 #invite #qjqj {position:relative;width:568px;height:437px;overflow:hidden;margin-left: 135px;}
+.mod_007 #invite #qjqj .img_filter{position:absolute;}
+.mod_007 #map_area{width:750px;height:465px;overflow:hidden;margin:0 auto;position:relative;margin-top:100px;background:#ddd;padding:10px}
+.mod_007 #map_area #main_area{width:100%;height:100%;overflow:hidden;float:left}
+.mod_007 #photo{width:1000px;margin:0 auto;min-height:0;overflow:hidden;margin-top:40px}
+.mod_007 #wall{width:1146px;height:608px;overflow:hidden;margin:0 auto;}
+.mod_007 .wall ul#area{height:575px}
+.mod_007 .wall ul li{position:absolute;top:260px;left:596px;}
+.mod_007 .wall table{height:520px;}
+/*mod_008*/
+.mod_008{background:url('../images/mainbg.jpg') no-repeat top #fa393a}
+.mod_008 .mask_cursor{display:block;_display:none}
+.mod_008 #ei_top_Area {background: url('../images/top_bar_bg.png') no-repeat;}
+.mod_008_z_invite{background:url('../images/invite_bg.jpg') no-repeat top center #fa393a}
+.mod_008 #index{width:100%;height:600px;overflow:hidden;margin:0 auto}
+.mod_008 .flash{position:absolute;left:50%;margin-left:-350px;width:650px;overflow:hidden;height:560px;top:105px;}
+.mod_008 .layout{position:absolute;width:600px;height:600px;left:50%;margin-left:-320px;top:105px;overflow:hidden;}
+.mod_008 .cover_clc{background:url('../images/mask.png') no-repeat}
+.mod_008 #menus{width:250px;height:630px;overflow:hidden;position:absolute;top:120px;right:20px}
+.mod_008 #menus table{width:100%;height:40px;padding:0;display:none}
+.mod_008 #menus .menu_flash{display:block}
+.mod_008 #main_mask,.mod_008 .main_mask{ position:absolute;z-index:99999;background-color:#fa393a;color:white;font-size:14px;top:0;left:0;padding:0;text-align:center;}
+.mod_008 #invite { width:703px;height:447px;overflow:hidden;margin:0 auto;padding:100px 0 0 89px;margin-top:100px}
+.mod_008 #invite #qjqj {position:relative;width:568px;height:437px;overflow:hidden;margin-left: 135px;}
+.mod_008 #invite #qjqj .img_filter{position:absolute;}
+.mod_008 #map_area{width:750px;height:465px;overflow:hidden;margin:0 auto;position:relative;margin-top:150px;background:#ddd;padding:10px}
+.mod_008 #map_area #main_area{width:100%;height:100%;overflow:hidden;float:left}
+.mod_008 #photo{width:1000px;margin:0 auto;min-height:0;overflow:hidden;margin-top:40px}
+.mod_008 #wall{width:1146px;height:608px;overflow:hidden;margin:0 auto;}
+.mod_008 .wall ul#area{height:575px}
+.mod_008 .wall ul li{position:absolute;top:260px;left:596px;}
+.mod_008 .wall table{height:520px;}
+/*mod_009*/
+.mod_009{background:url('../images/mainbg.jpg') repeat-x top #FFFCD7}
+.mod_009 .mask_cursor{display:block;_display:none}
+.mod_009 #ei_top_Area {background: url('../images/top_bar_bg.png') no-repeat;}
+.mod_009_z_invite{background:url('../images/invite_bg.jpg') repeat-x top center #FFFCD7}
+.mod_009_z_main{background:url('../images/indexbg.jpg') repeat-x top center #FFFCD7}
+.mod_009 #index{width:100%;height:600px;overflow:hidden;margin:0 auto}
+.mod_009 .flash{position:absolute;left:50%;margin-left:-309px;width:930px;overflow:hidden;height:650px;top:39px}
+.mod_009 .layout{position:absolute;width:528px;height:516px;left:50%;margin-left:-267px;top:97px;overflow:hidden;}
+.mod_009 .cover_clc{background:url('../images/mask.png') no-repeat}
+.mod_009 #menus{width:220px;height:530px;overflow:hidden;position:absolute;top:100px;right:20px}
+.mod_009 #menus table{width:100%;height:40px;padding:0;display:none}
+.mod_009 #menus .menu_flash{display:block}
+.mod_009_z_main #menus{display:none}
+.mod_009 #main_mask,.mod_009 .main_mask{ position:absolute;z-index:99999;background-color:#FFFCD7;color:white;font-size:14px;top:0;left:0;padding:0;text-align:center;}
+.mod_009 #invite { width:703px;height:447px;overflow:hidden;margin:0 auto;padding:100px 0 0 89px;margin-top:100px}
+.mod_009 #invite #qjqj {position:relative;width:568px;height:437px;overflow:hidden;margin-left: 135px;}
+.mod_009 #invite #qjqj .img_filter{position:absolute;}
+.mod_009 #map_area{width:750px;height:465px;overflow:hidden;margin:0 auto;position:relative;margin-top:150px;background:#ddd;padding:10px}
+.mod_009 #map_area #main_area{width:100%;height:100%;overflow:hidden;float:left}
+.mod_009 #photo{width:1000px;margin:0 auto;min-height:0;overflow:hidden;margin-top:40px}
+.mod_009 #wall{width:1146px;height:608px;overflow:hidden;margin:0 auto;}
+.mod_009 .wall ul#area{height:575px}
+.mod_009 .wall ul li{position:absolute;top:260px;left:596px;}
+.mod_009 .wall table{height:520px;}
+#together_time{padding-right:10px;}
