@@ -1,0 +1,16 @@
+1.查看文件大小
+ls -lh
+2,按照时间查看文件
+倒序：ls -lt  
+正序：ls -ltr
+3,设置别名alias
+alias vi='vim'
+4,取消别名
+unalias vi
+5,查看历史命令
+history
+6,同步历史命令到.bash_history
+history -w 
+7,清除历史命令
+history -c 
+
