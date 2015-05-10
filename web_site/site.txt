@@ -3,3 +3,4 @@
 ubuntu版本仓库：http://kr.archive.ubuntu.com/ubuntu/pool/universe/c/
 2015-05-10
 http://releases.ubuntu.com/
+linux命令行：http://billie66.github.io/TLCL/index.html

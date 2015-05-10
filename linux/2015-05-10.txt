@@ -1,0 +1,11 @@
+zip包
+解压：unzip filename
+压缩：zip -r name.zip name/
+
+tar.gz包
+解压：tar -zxvf filename.tar.gz
+压缩：tar -zcvf filename.tar.gz filename/
+
+tar.bz2包
+解压：tar jxvf filename.tar.bz2
+压缩：tar jxvf filename.tar.gz filename/
