@@ -1,0 +1,10 @@
+2015-06-24
+whoami :显示当前用户
+
+zip命令
+压缩多个文件 :zip -r test.zip file1 file2 file3
+查看zip包中的文件 : unzip -v test.zip 或者用unzip -l test.zip
+从zip包中删除某一个文件:zip -d test.zip file3
+把zip包解压到指定的目录中:unzip test.zip -d  my_test
+
+
