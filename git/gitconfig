@@ -1,0 +1,14 @@
+[user]
+    email = komiles@163.com
+    name = komiles
+[color]
+    ui = true
+[alias]
+    co = checkout
+    ci = commit
+    st = status
+    br = branch
+    last = log -1
+[core]
+    editor = mate -w
+
