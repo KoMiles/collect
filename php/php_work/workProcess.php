@@ -11,7 +11,9 @@ class workProcess {
     const PHP_LOG = './php.log';
 
     private static $process = null;
-    private static $cmd = null;
+
+    //命令必须在这个里面
+    private static $cmd_str = array('start','stop','restart');
 
     /**
      * main 
@@ -34,38 +36,92 @@ class workProcess {
             exit;
         }
         self::$process = $filename;
+        //检测命令
+        if(!in_array($cmd,self::$cmd_str)) {
+            echo "cmd is not wrong! \n";
+            exit;
+        }
         self::$cmd();
 
     }
-    
+
     /**
-     * start 
-     * 启动程序 
+     * start
+     * 启动程序
      * @static
      * @access public
      * @return void
      */
     public static function start() {
-        $cmd_str = self::PHP_PATH." ".self::$process ." > ". self::PHP_LOG . "&";
-        shell_exec($cmd_str);
-
+        self::runWork();
         echo "start done~!\n";
-        echo "pid is ".self::getPid()."\n";
+        echo "pid is ".self::getPid();
         exit;
     }
 
     /**
-     * getPid 
-     * 获取进程的pid
+     * stop
+     * 终止程序
      * @static
      * @access public
      * @return void
      */
-    public static function getPid(){
+    public static function stop() {
+        self::killWork(self::getPid());
+        echo "stop done~!\n";
+        exit;
+    }
+
+    /**
+     * restart 
+     * 重启一个php程序
+     * @static
+     * @access public
+     * @return void
+     */
+    public static function restart() {
+
+
+    }
+    /**
+     * runWork
+     * 运行程序
+     * @static
+     * @access private
+     * @return void
+     */
+    private static function runWork() {
+        $cmd_str = self::PHP_PATH." ".self::$process ." > ". self::PHP_LOG . "&";
+        echo $cmd_str."\n";
+        shell_exec($cmd_str);
+    }
+
+    /**
+     * killWork
+     * 杀死一个程序
+     * @static
+     * @access private
+     * @return void
+     */
+    private static function killWork($pid) {
+        $cmd_str = "kill -9  ".$pid;
+        shell_exec($cmd_str);
+        echo "kill {$pid}";
+    }
+
+    /**
+     * getPid
+     * 获取进程id
+     * @static
+     * @access private
+     * @return void
+     */
+    private static function getPid(){
         $cmd_str  = "ps -ef |grep ".basename(self::$process)." |grep -v grep |grep -v ".basename(__FILE__)." |awk '{print $2}'";
         $pid = shell_exec($cmd_str);
         return $pid;
     }
 
 }
-    workProcess::main($argv);
+
+workProcess::main($argv);
