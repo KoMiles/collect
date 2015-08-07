@@ -1,7 +1,7 @@
 <?php
 /**
  * 管理php进程 
- * 运行方式是 workProcess filename.php start
+ * 运行方式是 workProcess filename.php start 3
  * @date 2015-08-05 18:40:00
  * @author komiles@163.com
  */
@@ -14,6 +14,10 @@ class workProcess {
 
     //命令必须在这个里面
     private static $cmd_str = array('start','stop','restart');
+    
+    //脚本执行次数
+    private static $times = 0;
+
 
     /**
      * main 
@@ -25,8 +29,9 @@ class workProcess {
      */
     public static function main($argv) {
         //需要执行的php文件
-        $filename = $argv[1] ? $argv[1] : '';
-        $cmd = $argv[2] ? $argv[2] : '';
+        $filename = isset($argv[1]) ? $argv[1] : '';
+        $cmd = isset($argv[2]) ? $argv[2] : '';
+        $num = isset($argv[3]) ? $argv[3] : 0;
         if(empty($filename)) {
             echo "process is not null \n";
             exit;
@@ -35,7 +40,12 @@ class workProcess {
             echo "cmd is not null \n";
             exit;
         }
+        //if(empty($num)) {
+            //echo "times is not null \n";
+            //exit;
+        //}
         self::$process = $filename;
+        self::$times = $num;
         //检测命令
         if(!in_array($cmd,self::$cmd_str)) {
             echo "cmd is not wrong! \n";
@@ -53,9 +63,10 @@ class workProcess {
      * @return void
      */
     public static function start() {
-        self::runWork();
+        for($i=0; $i < self::$times; $i++ ) {
+            self::runWork();
+        }
         echo "start done~!\n";
-        echo "pid is ".self::getPid();
         exit;
     }
 
@@ -67,7 +78,10 @@ class workProcess {
      * @return void
      */
     public static function stop() {
-        self::killWork(self::getPid());
+        $pids = self::getPid();
+        foreach($pids as $pid){
+            self::killWork($pid);
+        }
         echo "stop done~!\n";
         exit;
     }
@@ -81,8 +95,16 @@ class workProcess {
      */
     public static function restart() {
 
-
+        $pids = self::getPid();
+        for($i=0; $i < self::$times; $i++ ) {
+            self::killWork($pids[$i]);
+            self::runWork();
+            sleep(1);
+        }
+        echo "restart done~!";
+        exit;
     }
+
     /**
      * runWork
      * 运行程序
@@ -106,7 +128,7 @@ class workProcess {
     private static function killWork($pid) {
         $cmd_str = "kill -9  ".$pid;
         shell_exec($cmd_str);
-        echo "kill {$pid}";
+        echo "kill {$pid} \n";
     }
 
     /**
@@ -119,7 +141,9 @@ class workProcess {
     private static function getPid(){
         $cmd_str  = "ps -ef |grep ".basename(self::$process)." |grep -v grep |grep -v ".basename(__FILE__)." |awk '{print $2}'";
         $pid = shell_exec($cmd_str);
-        return $pid;
+
+        $pids = array_filter(explode("\n",$pid));
+        return $pids;
     }
 
 }
