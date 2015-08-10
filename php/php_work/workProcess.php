@@ -1,7 +1,10 @@
 <?php
 /**
  * 管理php进程 
- * 运行方式是 workProcess filename.php start 3
+ * 运行方式是 
+ * 启动5个进程：php workProcess.php work.php start 5
+ * 重启进程：php workProcess.php work.php restart
+ * 停止进程：php workProcess.php work.php stop
  * @date 2015-08-05 18:40:00
  * @author komiles@163.com
  */
@@ -14,10 +17,9 @@ class workProcess {
 
     //命令必须在这个里面
     private static $cmd_str = array('start','stop','restart');
-    
+
     //脚本执行次数
     private static $times = 0;
-
 
     /**
      * main 
@@ -37,13 +39,10 @@ class workProcess {
             exit;
         }
         if(empty($cmd)) {
-            echo "cmd is not null \n";
+            echo "cmd not exists \n";
             exit;
         }
-        //if(empty($num)) {
-            //echo "times is not null \n";
-            //exit;
-        //}
+
         self::$process = $filename;
         self::$times = $num;
         //检测命令
@@ -52,7 +51,6 @@ class workProcess {
             exit;
         }
         self::$cmd();
-
     }
 
     /**
@@ -81,6 +79,7 @@ class workProcess {
         $pids = self::getPid();
         foreach($pids as $pid){
             self::killWork($pid);
+            sleep(1);
         }
         echo "stop done~!\n";
         exit;
@@ -96,7 +95,7 @@ class workProcess {
     public static function restart() {
 
         $pids = self::getPid();
-        for($i=0; $i < self::$times; $i++ ) {
+        for($i=0; $i < count($pids); $i++ ) {
             self::killWork($pids[$i]);
             self::runWork();
             sleep(1);
@@ -113,7 +112,7 @@ class workProcess {
      * @return void
      */
     private static function runWork() {
-        $cmd_str = self::PHP_PATH." ".self::$process ." > ". self::PHP_LOG . "&";
+        $cmd_str = sprintf("%s %s >> %s &", self::PHP_PATH, self::$process, self::PHP_LOG);
         echo $cmd_str."\n";
         shell_exec($cmd_str);
     }
@@ -145,7 +144,6 @@ class workProcess {
         $pids = array_filter(explode("\n",$pid));
         return $pids;
     }
-
 }
 
 workProcess::main($argv);

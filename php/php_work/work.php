@@ -1,6 +1,6 @@
 <?php
 while (true) {
-        date('Y-m-d H:i:s').PHP_EOL > "./work.log";
+        echo date('Y-m-d H:i:s').PHP_EOL ;
         sleep(3);
 
     }
