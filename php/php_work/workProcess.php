@@ -61,7 +61,7 @@ class workProcess {
      * @return void
      */
     public static function start() {
-        for($i=0; $i < self::$times; $i++ ) {
+        for($i=0; $i <=self::$times; $i++ ) {
             self::runWork();
         }
         echo "start done~!\n";
@@ -95,10 +95,18 @@ class workProcess {
     public static function restart() {
 
         $pids = self::getPid();
-        for($i=0; $i < count($pids); $i++ ) {
+        $count = count($pids);
+        for($i=0; $i < $count; $i++ ) {
             self::killWork($pids[$i]);
             self::runWork();
             sleep(1);
+        }
+        $times = self::$times;
+        if( $count < $times) {
+            for($j=0; $j< $times-$count; $j++) {
+                self::runWork();
+                sleep(1);
+            }
         }
         echo "restart done~!";
         exit;
