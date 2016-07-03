@@ -7,6 +7,7 @@ echo "Connection to server sucessfully\n";
 $redis->lpush("tutorial-list", "Redis");
 $redis->lpush("tutorial-list", "Mongodb");
 $redis->lpush("tutorial-list", "Mysql");
+$redis->lpush("tutorial-list", "Mysql_bak");
 // Get the stored data and print it
 $arList = $redis->lrange("tutorial-list", 0 ,5);
 echo "Stored string in redis:: ";
