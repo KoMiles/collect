@@ -1,0 +1,2 @@
+//memcache实现分布式
+http://my.oschina.net/andylucc/blog/671447

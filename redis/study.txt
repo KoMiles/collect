@@ -1,0 +1,2 @@
+//redis的五种数据类型
+http://blog.csdn.net/gaogaoshan/article/details/41039581/
