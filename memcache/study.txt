@@ -1,2 +1,4 @@
 //memcache实现分布式
 http://my.oschina.net/andylucc/blog/671447
+//memcache实现分布式，一致性hash代码实现
+https://blog.phpha.com/backup/archives/1303.html
