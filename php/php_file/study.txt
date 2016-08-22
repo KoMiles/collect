@@ -1,0 +1,3 @@
+//flock文件锁
+php flock　使用实例
+http://blog.csdn.net/fdipzone/article/details/43839851
