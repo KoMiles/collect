@@ -1,0 +1,5 @@
+1,http发送get,post请求的几种方法
+http://blog.csdn.net/haha00217/article/details/7969504
+2,http头
+http://www.cnblogs.com/jams742003/archive/2010/02/01/1660912.html
+http://www.ecdoer.com/post/http-seo.html
