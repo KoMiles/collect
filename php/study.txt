@@ -3,3 +3,8 @@ http://blog.csdn.net/haha00217/article/details/7969504
 2,http头
 http://www.cnblogs.com/jams742003/archive/2010/02/01/1660912.html
 http://www.ecdoer.com/post/http-seo.html
+3,架构设计
+http://www.cnblogs.com/Mainz/archive/2009/04/28/1445424.html
+http://www.cnblogs.com/Mainz/archive/2007/12/15/996082.html
+http://www.cnblogs.com/Mainz/archive/2009/10/31/1593445.html
+http://kb.cnblogs.com/page/99549/
