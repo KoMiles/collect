@@ -1,5 +1,4 @@
 <?php
-
 /**
  * 单例模式
  * Created by PhpStorm.
@@ -7,10 +6,9 @@
  * Date: 17/3/14
  * Time: 23:14
  */
-//namespace patterns\Singleton;
-include ('Singleton.php');
+include ('../global.php');
 
-
-$oFirstCall = Singleton::getInstance();
-
+$oFirstCall = \Singleton\Singleton::getInstance();
 $oFirstCall -> getTest();
+
+// result "this is test";
