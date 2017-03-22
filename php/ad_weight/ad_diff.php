@@ -1,18 +1,24 @@
 <?php
-$iLoopNum = 3;
+$iLoopNum = 1;
 $aAdList = array(
-    '100001',
+    //'100001',
     '100002',
-    '100003',
+    //'100003',
     //'100004',
     //'100005',
     //'100006',
 );
 function getLoopAd($aAdList, $loop) {
     $num = count($aAdList);
-    $iBaseNum = $num+intval(floor(($loop-$num)/2));
+    if($num < $loop) {
+        $iDivisionNum = intval(floor(($loop-$num)/2));
+        $iDivisionNum = $iDivisionNum > 0 ? $iDivisionNum : 1;
+        $iBaseNum = $num + $iDivisionNum;
+    } else {
+        $iBaseNum = $num;
+    }
     $randNum = mt_rand(1,$iBaseNum);
-    return $randNum-1;
+    return $randNum;
 }
 function getDiff($aAdList, $iLoopNum,$lastAd)
 {
@@ -27,12 +33,12 @@ function getDiff($aAdList, $iLoopNum,$lastAd)
 
 $count1 = $count2 = $count3 = $count4 = $count5 = $count6 = $emptyNum = 0;
 $lastNum = 0;
-$run_times = 100;
+$run_times = 10000;
 for($i=0;$i<=$run_times;$i++) {
     $iAd = getDiff($aAdList,$iLoopNum,$lastNum);
-    echo $iAd."\n";
+    //echo $iAd."\n";
     $lastNum = $iAd;
-    $iAd = isset($aAdList[$iAd]) ? $aAdList[$iAd]  : 0;
+    $iAd = isset($aAdList[$iAd-1]) ? $aAdList[$iAd-1]  : 0;
     switch($iAd) {
     case 100001:
         $count1 ++;
